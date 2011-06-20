@@ -1,9 +1,11 @@
 <?php
+require_once("Application.php");
 /**
 * 
 */
-class Line {
+class Line extends Application {
   private $title, $description, $department_id, $id, $account_id, $complete, $public;
+  
   function __construct($title = "", $description="", $department_id="4dfb23a87768f93e0200000b",$account_id="",$complete="",$public= "",$id="")
   {
     $this->title              = $title;
@@ -14,6 +16,15 @@ class Line {
     $this->public             = $public;
     $this->id                 = $id; 
   }
+
+  //Create a new Station
+  public function createStation($type = "Work"){
+    $jsonresponse                   = $this->request("lines/".$this->id."/stations.json","POST","station[type]=".$type);
+    $station                           = json_decode($jsonresponse);
+    // echo $station->type;
+    return new Station($station->type,$station->line_id,$station->_id);
+  }
+
 
   public function getTitle(){
     return $this->title;

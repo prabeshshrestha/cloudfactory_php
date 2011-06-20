@@ -5,6 +5,7 @@ require_once("Application.php");
 
 class CloudFactory extends Application {
 
+  //Create a new Line
   public function createLine($title = "", $department_name = "Other", $description = ""){
     $paramaters                     = "line[title]=".$title."&line[description]=".$description."&line[department_name]=".$department_name;
     $jsonresponse                   = $this->request("lines.json","POST",$paramaters);
@@ -12,13 +13,11 @@ class CloudFactory extends Application {
     return new Line($line->title,$line->description,$line->department_id,$line->account_id,$line->complete,$line->public,$line->_id);
   }
 
+  //Get the list of all the lines
   public function getLines(){
-    $jsonresponse                   = $this->request("lines.json","GET");
     $lines                          = array();
-    // echo $lines[0]->account_id;
-    foreach (json_decode($jsonresponse) as $line) {
-      $line1                        = new Line($line->title,$line->description,$line->department_id,$line->account_id,$line->complete,$line->public,$line->_id);
-      array_push($lines, $line1);
+    foreach (json_decode($this->request("lines.json","GET")) as $line) {
+      array_push($lines, new Line($line->title,$line->description,$line->department_id,$line->account_id,$line->complete,$line->public,$line->_id));
     }
     return $lines;
   }

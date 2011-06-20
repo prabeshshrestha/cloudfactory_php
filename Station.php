@@ -22,8 +22,21 @@ class Station
     }
 
     public function getId(){
-      $this->id;
+      return $this->id;
     }
+    
+    public function setType($type){
+      $this->type = $type;
+    }
+
+    public function setLineId($line_id){
+      $this->line_id = $line_id;
+    }
+
+    public function setId($id){
+      $this->id = $id;
+    }
+    
 
   }
 
