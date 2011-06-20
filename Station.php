@@ -5,16 +5,26 @@
 */
 class Station
 {
-  private $type;
-  function __construct()
+  private $type, $line_id, $id;
+  function __construct($type, $line_id, $id)
   {
-    $this->test = "test letters";
+    $this->type    = $type;
+    $this->line_id = $line_id;
+    $this->id      = $id;
+    }
+
+    public function getType(){
+      return $this->type;
+    }
+
+    public function getLineId(){
+      return $this->line_id;
+    }
+
+    public function getId(){
+      $this->id;
+    }
+
   }
 
-  public function getTest(){
-    return $this->test;
-  }
-
-}
-
-?>
+  ?>

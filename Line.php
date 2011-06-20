@@ -18,9 +18,11 @@ class Line {
   public function getTitle(){
     return $this->title;
   }
+  
   public function getDepartmentID(){
     return $this->department_id;
   }
+  
   public function getDescription(){
     return $this->description;
   }
