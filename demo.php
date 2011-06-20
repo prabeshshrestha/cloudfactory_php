@@ -9,7 +9,7 @@
   <?php
 require_once("cloudFactory.php");
 $cf = new CloudFactory();
-$line = $cf->createLine("Test Line","Other","Test Description");
+$line = $cf->createLine("Prabesh","Other","Test Description");
 echo $line->getTitle();
 // $line->createStation();
 // $cf->getResults();

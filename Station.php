@@ -5,7 +5,7 @@
 */
 class Station
 {
-  private $test;
+  private $type;
   function __construct()
   {
     $this->test = "test letters";
