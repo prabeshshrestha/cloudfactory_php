@@ -1,0 +1,19 @@
+CloudFactory PHP Client library
+Sprout Technology, 2011 (prabesh.shrestha@sprout-technology.com)
+
+This is a PHP client for the CloudFactory API. It allows JSON for the CF API Server  to be used.
+
+Example usage:
+
+require_once("cloudFactory.php");
+$cf = new CloudFactory();
+
+/* Create Lines / Get the List of Lines in CF(and public lines)*/
+  $l = new Line("newLine", "description","Other");
+  $cf->addLine($l);
+
+  $line = $cf->createLine("Line1","Other","Test Description1");
+  $line2 = $cf->createLine("Line2","Other","Test Description2");
+  
+  $lines = $cf->getLines();
+  $publicLines = $cf->getPublicLines();
