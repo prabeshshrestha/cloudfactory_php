@@ -8,9 +8,23 @@
   <?php
     require_once("cloudFactory.php");
     $cf = new CloudFactory();
-    $line = $cf->createLine("Line1","Other","Test Description1");
-    $line2 = $cf->createLine("Line2","Other","Test Description2");
-    /* Create Lines / Get the List of Lines in CF(and public lines)
+
+    /* 
+    assign input formats
+    assign a work station 
+      assign form to the station
+      assign some form fields to the station
+      assign a human worker
+    assign a tournament station
+      assign form to the station
+      assign some form fields to the station
+      assign a human worker
+    assign a improve station
+      assign form to the station
+      assign some form fields to the station
+      assign a human workers
+      
+    Create Lines / Get the List of Lines in CF(and public lines)
       $l = new Line("newLine", "description","Other");
       $cf->addLine($l);
 
@@ -20,8 +34,8 @@
       $lines = $cf->getLines();
       $publicLines = $cf->getPublicLines();
     */
-    
-    $publicLines = $cf->getPublicLines();
+    $line = $cf->createLine("Line1","Other","Test Description1");
+    // $line->setInputFormat();// :name => "Company, :required => true, :valid_type => "general"
     // echo $lines[0]->getAccountId();
     /*
     $line1->setInputFormat();// :name => "Company, :required => true, :valid_type => "general"
@@ -29,7 +43,9 @@
     /*/
 
 
-     // $station1 = $line->createStation("Work"); //type => "(Work/Tornament/Improve) *Improve station cannot exist as first station of a line
+     $station1 = $line->createStation("Work"); //type => "(Work/Tornament/Improve) *Improve station cannot exist as first station of a line
+     $worker1 = $station1->createWorker("HumanWorker",1,true);
+     echo $worker1->getType();
      // $station2 = $line->createStation("Work");
      // $lineid = $station1->getLineId();
        // echo $lineid;

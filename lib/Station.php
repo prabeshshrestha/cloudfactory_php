@@ -1,9 +1,10 @@
 <?php
-
+require_once("Application.php");
+require_once("Worker.php");
 /**
 * 
 */
-class Station
+class Station extends Application
 {
   private $type, $line_id, $id;
   function __construct($type, $line_id, $id)
@@ -11,6 +12,19 @@ class Station
     $this->type    = $type;
     $this->line_id = $line_id;
     $this->id      = $id;
+    }
+
+    /*
+     * createWorker
+     *     $type  : Type of Worker( e.g HumanWorker)
+     *     @return  new Worker Object
+     *     Creates a new Worker for the Station Object
+     */
+    public function createWorker($type = "HumanWorker",$number = 1,$reward = true){
+      $parameters = "worker[type]=".$type."&worker[number]=".$number."&worker[reward]=".$reward;
+      $jsonresponse                   = $this->request("stations/".$this->id."/workers.json","POST",$parameters);
+      $worker                           = json_decode($jsonresponse);
+       return new Worker($worker->type,$worker->station_id,$worker->number,$worker->reward,$worker->_id);
     }
 
     public function getType(){
