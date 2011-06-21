@@ -8,7 +8,8 @@
   <?php
     require_once("cloudFactory.php");
     $cf = new CloudFactory();
-
+    $line = $cf->createLine("Line1","Other","Test Description1");
+    $line2 = $cf->createLine("Line2","Other","Test Description2");
     /* Create Lines / Get the List of Lines in CF(and public lines)
       $l = new Line("newLine", "description","Other");
       $cf->addLine($l);
