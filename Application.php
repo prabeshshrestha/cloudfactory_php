@@ -13,12 +13,27 @@ throw(new Exception(
 // * @lastUpdated    28-June-2011
 
 
+
+/*
+ *  Application Class
+ *     All the helper methods and constants for the application are defined in this class
+ *     
+ */
 class Application {
 
   private $apikey               = "0a5da78eecf436fbec3b4ba81a6cc376baefa3d7";
   private $apiurl               = "http://php.lvh.me:3000/api/";
   private $apiversion           = "v1";
 
+
+  /*
+   * request
+   *     $path  : path that needs to be hit in the API server
+   *     $method : GET/POST/DELETE/PUT
+   *     $params : additional parameters for the request to the API server
+   *     @return  Returns whatever response is returned by the Cloudfactorey API server
+   *     Constructor for the line Class
+   */
   public function request($path = "lines.json", $method = "GET", $params = "") { 
     $url                        = $this->apiurl.$this->apiversion."/".$path."?api_key=".$this->apikey;         
     $curl                       = curl_init($url);
@@ -32,6 +47,9 @@ class Application {
       curl_setopt($curl, CURLOPT_POST, TRUE);
       curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      break;
+      case "DELETE":
+      curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
       break;
       default:
       throw(new CFException("Unknown method $method"));

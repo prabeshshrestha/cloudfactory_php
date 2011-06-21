@@ -6,6 +6,17 @@ require_once("Application.php");
 class Line extends Application {
   private $title, $description, $department_id, $id, $account_id, $complete, $public;
   
+  
+  /*
+   * __construct
+   *     $title  : Title of Line
+   *     $description : Description of Line
+   *     $department_id : Department Id of the Line
+   *     $account_id : Account Id of the line
+   *     $complete
+   *     $public
+   *     Constructor for the line Class
+   */
   function __construct($title = "", $description="", $department_id="4dfb23a87768f93e0200000b",$account_id="",$complete="",$public= "",$id="")
   {
     $this->title              = $title;
@@ -17,14 +28,23 @@ class Line extends Application {
     $this->id                 = $id; 
   }
 
-  //Create a new Station
+  /*
+   * createStation
+   *     $type  : Type of Station( e.g Work)
+   *     @return  new Station Object
+   *     Creates a new Station for the line Object
+   */
   public function createStation($type = "Work"){
     $jsonresponse                   = $this->request("lines/".$this->id."/stations.json","POST","station[type]=".$type);
     $station                           = json_decode($jsonresponse);
-    // echo $station->type;
     return new Station($station->type,$station->line_id,$station->_id);
   }
 
+  // public function deleteLine($line_id){
+  //   $paramaters                     = "id=$line_id;
+  //   $jsonresponse                   = $this->request("lines.json","DELETE",$paramaters);
+  //   return "Line Deleted Successfully";
+  // }
 
   public function getTitle(){
     return $this->title;
