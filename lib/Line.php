@@ -8,12 +8,12 @@ class Line extends Application {
   
   /*
    * __construct
-   *     @param string $title  : Title of Line
-   *     @param string $description : Description of Line
-   *     @param integer $department_id : Department Id of the Line
-   *     @param integer $account_id : Account Id of the line
-   *     @param boolean $complete :
-   *     @param boolean $public :
+   *     @param string $title                       : Title of Line
+   *     @param string $description                 : Description of Line
+   *     @param integer $department_id              : Department Id of the Line
+   *     @param integer $account_id                 : Account Id of the line
+   *     @param boolean $complete                   :
+   *     @param boolean $public                     :
    *     Constructor for the line Class
    */
   function __construct($title = "", $description="", $department_id="4dfb23a87768f93e0200000b",$account_id="",$complete="",$public= "",$id="")
@@ -31,10 +31,10 @@ class Line extends Application {
 
   /*
    * createStation
-   *     @param string $type  : Type of Station( e.g Work / Tournament  / Improve)
-   *     @param integer $max_judges  : Maximum Number of Judges
-   *     @param boolean $enabled  :  
-   *     @return Station :  new Station Object
+   *     @param string $type                       : Type of Station( e.g Work / Tournament  / Improve)
+   *     @param integer $max_judges                : Maximum Number of Judges
+   *     @param boolean $enabled                   :  
+   *     @return Station                           :  new Station Object
    *     Creates a new Station for the line Object
    */
   public function createStation($type = "Work", $max_judges = 1, $enabled = true){

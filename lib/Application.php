@@ -12,13 +12,13 @@ if (!function_exists('json_decode')) {
   throw new Exception('CloudFactory needs the JSON PHP extension.');
 }
 
-  // *
-  // * @author         Prabesh Shrestha ( prabesh.shrestha@sprout-technology.com)
-  // * @authorURL      http://www.sprout-technology.com
-  // * @description    CloudFactory_php is a CloudFactory API wrapper written in PHP
-  // * @projectURL     http://github.com/sprout/cloudfactory_php
-  // * @created        19-June-2011
-  // * @lastUpdated    28-June-2011
+// *
+// * @author         Prabesh Shrestha ( prabesh.shrestha@sprout-technology.com)
+// * @authorURL      http://www.sprout-technology.com
+// * @description    CloudFactory_php is a CloudFactory API wrapper written in PHP
+// * @projectURL     http://github.com/sprout/cloudfactory_php
+// * @created        19-June-2011
+// * @lastUpdated    28-June-2011
 
 
 
@@ -29,17 +29,17 @@ if (!function_exists('json_decode')) {
 */
 class Application {
 
-  protected $apikey               = "0a5da78eecf436fbec3b4ba81a6cc376baefa3d7";
-  protected $apiurl               = "http://php.lvh.me:3000/api/";
-  protected $apiversion           = "v1";
+  protected $apikey           = "0a5da78eecf436fbec3b4ba81a6cc376baefa3d7";
+  protected $apiurl           = "http://php.lvh.me:3000/api/";
+  protected $apiversion       = "v1";
 
 
   /*
   * request
-  *     @param string $path  : path that needs to be hit in the API server
-  *     @param string $method : GET/POST/DELETE/PUT
-  *     @param string $params : additional parameters for the request to the API server
-  *     @return JsonObject Returns whatever response is returned by the Cloudfactorey API server
+  *     @param string $path                 : path that needs to be hit in the API server
+  *     @param string $method               : GET/POST/DELETE/PUT
+  *     @param string $params               : additional parameters for the request to the API server
+  *     @return JsonObject                  : Returns whatever response is returned by the Cloudfactorey API server
   *     Constructor for the line Class
   */
 public function request($path = "lines.json", $method = "GET", $params = "") { 
@@ -73,12 +73,28 @@ public function setApiKey($apikey){
   $this->apikey               = $apikey;
 }
 
+public function getApiKey()
+{
+  return $this->apikey;
+}
+
 public function setApiVersion($apiversion){
   $this->apiversion           = $apiversion;
+}
+
+public function getApiVersion()
+{
+  return $this->apiversion;
 }
 
 public function setApiUrl($apiurl){
   $this->apiurl               = $apiurl;
 }
+
+public function getApiUrl()
+{
+  return $this->apiurl;
+}
+
 }
 ?>

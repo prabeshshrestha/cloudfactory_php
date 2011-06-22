@@ -16,10 +16,10 @@ class Station extends Application
 
     /*
      * createWorker
-     *     @param string $type  : Type of Worker( e.g HumanWorker)
-     *     @param integer $number 
-     *     @param boolean $reward 
-     *     @return Worker :  new Worker Object
+     *     @param string $type                  : Type of Worker( e.g HumanWorker)
+     *     @param integer $number               :
+     *     @param boolean $reward               :
+     *     @return Worker                       :  new Worker Object
      *     Creates a new Worker for the Station Object
      */
     public function createWorker($type = "HumanWorker",$number = 1,$reward = true){
@@ -31,10 +31,10 @@ class Station extends Application
     
     /*
      * createForm
-     *     @param string $type  : Type of Worker( e.g HumanWorker)
-     *     @param number 
-     *     @param reward 
-     *     @return Worker :  new Worker Object
+     *     @param string $type               : Type of Worker( e.g HumanWorker)
+     *     @param number                     : 
+     *     @param reward                     :
+     *     @return Worker                    :  new Worker Object
      *     Creates a new Worker for the Station Object
      */
     public function createForm($type = "TaskForm",$title = "",$description = ""){

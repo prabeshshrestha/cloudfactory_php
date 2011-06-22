@@ -5,7 +5,7 @@
 class FormField
 {
   private $field_type, $form_id,$label, $id, $required;
-  function __construct($field_type = "", $form_id, $label,$required, $id)
+  function __construct($field_type = "", $label = "", $form_id = "",$required = true, $id = "")
   {
     $this->field_type              = $field_type;
     $this->form_id                 = $form_id;
