@@ -9,12 +9,12 @@ class Line extends Application {
   
   /*
    * __construct
-   *     $title  : Title of Line
-   *     $description : Description of Line
-   *     $department_id : Department Id of the Line
-   *     $account_id : Account Id of the line
-   *     $complete
-   *     $public
+   *     @param string $title  : Title of Line
+   *     @param string $description : Description of Line
+   *     @param string $department_id : Department Id of the Line
+   *     @param string $account_id : Account Id of the line
+   *     @param string $complete :
+   *     @param string $public :
    *     Constructor for the line Class
    */
   function __construct($title = "", $description="", $department_id="4dfb23a87768f93e0200000b",$account_id="",$complete="",$public= "",$id="")
@@ -32,8 +32,8 @@ class Line extends Application {
 
   /*
    * createStation
-   *     $type  : Type of Station( e.g Work)
-   *     @return  new Station Object
+   *     @param string $type  : Type of Station( e.g Work)
+   *     @return Station :  new Station Object
    *     Creates a new Station for the line Object
    */
   public function createStation($type = "Work"){

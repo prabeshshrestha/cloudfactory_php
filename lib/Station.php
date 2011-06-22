@@ -16,8 +16,8 @@ class Station extends Application
 
     /*
      * createWorker
-     *     $type  : Type of Worker( e.g HumanWorker)
-     *     @return  new Worker Object
+     *     @param string $type  : Type of Worker( e.g HumanWorker)
+     *     @return Worker :  new Worker Object
      *     Creates a new Worker for the Station Object
      */
     public function createWorker($type = "HumanWorker",$number = 1,$reward = true){
