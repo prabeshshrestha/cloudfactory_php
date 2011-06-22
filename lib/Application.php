@@ -13,12 +13,12 @@ if (!function_exists('json_decode')) {
 }
 
 // *
-// * @author         Prabesh Shrestha ( prabesh.shrestha@sprout-technology.com)
-// * @authorURL      http://www.sprout-technology.com
-// * @description    CloudFactory_php is a CloudFactory API wrapper written in PHP
-// * @projectURL     http://github.com/sprout/cloudfactory_php
-// * @created        19-June-2011
-// * @lastUpdated    28-June-2011
+// * @author            Prabesh Shrestha ( prabesh.shrestha@sprout-technology.com)
+// * @authorURL         http://www.sprout-technology.com
+// * @description       CloudFactory_php is a CloudFactory API wrapper written in PHP
+// * @projectURL        http://github.com/sprout/cloudfactory_php
+// * @created           19-June-2011
+// * @lastUpdated       28-June-2011
 
 
 

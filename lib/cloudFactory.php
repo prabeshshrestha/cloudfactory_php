@@ -16,7 +16,7 @@ class CloudFactory extends Application {
    *     @return Line                        :  new Line Object
    *     Creates a new Line with the parameter passed
    */
-  public function createLine($title = "", $department_name = "Other", $description = ""){
+  public function createLine($title, $department_name = "Other", $description = ""){
     $paramaters                     = "line[title]=".$title."&line[description]=".$description."&line[department_name]=".$department_name;
     $jsonresponse                   = $this->request("lines.json","POST",$paramaters);
     $line                           = json_decode($jsonresponse);
@@ -29,7 +29,7 @@ class CloudFactory extends Application {
    *     @return Line                      :  new Line Object
    *     Adds the line object created to cloudfactory
    */
-  public function addLine($line){
+  public function addLine(Line $line){
     $paramaters                     = "line[title]=".$line->getTitle()."&line[description]=".$line->getDescription()."&line[department_name]=".$line->getDepartmentID();
     $jsonresponse                   = $this->request("lines.json","POST",$paramaters);
     $line                           = json_decode($jsonresponse);

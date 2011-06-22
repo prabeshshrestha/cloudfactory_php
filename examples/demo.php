@@ -1,10 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CloudFactory Demo Application</title>
-  </head>
-  <body>
   <?php
     require_once("../lib/cloudFactory.php");
     $cf = new CloudFactory();
@@ -42,10 +35,9 @@
     $line1->setInputFormat();// :name => "Website, :required => false, :valid_type => "url"
     /*/
 
-
-     $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
-     $worker1 = $station1->createWorker("HumanWorker",1,true);
-     $form1 = $station1->createForm("TaskForm","titletest","descriptiontest");
+     // $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
+     //     $worker1 = $station1->createWorker("HumanWorker",1,true);
+     //     $form1 = $station1->createForm("TaskForm","titletest","descriptiontest");
      // $formField1 = $form1->createFormField("SA", "First Name", true);
      // $formfield2 = new FormField("SA", "First Name");
      // $form1->addFormField($formfield2);
@@ -68,5 +60,3 @@
     // echo "</br> Line Info : " .$line->getDescription();
     */
   ?>
-  </body>
-</html>
