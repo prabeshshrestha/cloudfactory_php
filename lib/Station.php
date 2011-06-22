@@ -1,7 +1,4 @@
 <?php
-require_once("Application.php");
-require_once("Worker.php");
-require_once("Form.php");
 /**
 * 
 */

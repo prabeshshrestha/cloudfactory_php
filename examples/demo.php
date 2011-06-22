@@ -6,7 +6,7 @@
   </head>
   <body>
   <?php
-    require_once("cloudFactory.php");
+    require_once("../lib/cloudFactory.php");
     $cf = new CloudFactory();
 
     /* 
@@ -34,7 +34,7 @@
       $lines = $cf->getLines();
       $publicLines = $cf->getPublicLines();
     */
-    $line = $cf->createLine("Line1","Other","Test Description1");
+    $line = $cf->createLine("Linasdfe111","Other","Test Description1");
     // $line->setInputFormat();// :name => "Company, :required => true, :valid_type => "general"
     // echo $lines[0]->getAccountId();
     /*
