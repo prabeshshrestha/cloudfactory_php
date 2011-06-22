@@ -19,26 +19,23 @@
       
     Create Lines / Get the List of Lines in CF(and public lines)
       $l = new Line("newLine", "description","Other");
-      $cf->addLine($l);
-
-      $line = $cf->createLine("Line1","Other","Test Description1");
-      $line2 = $cf->createLine("Line2","Other","Test Description2");
-      
+      $cf->addLine($l);      
       $lines = $cf->getLines();
       $publicLines = $cf->getPublicLines();
     */
     $line = $cf->createLine("Linasdfe111","Other","Test Description1");
-    // $line->setInputFormat();// :name => "Company, :required => true, :valid_type => "general"
-    // echo $lines[0]->getAccountId();
-    /*
-    $line1->setInputFormat();// :name => "Company, :required => true, :valid_type => "general"
-    $line1->setInputFormat();// :name => "Website, :required => false, :valid_type => "url"
-    /*/
+    $inputheader1 = $line->createInputFormat("Company",true,"general");
 
-     // $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
-     //     $worker1 = $station1->createWorker("HumanWorker",1,true);
-     //     $form1 = $station1->createForm("TaskForm","titletest","descriptiontest");
-     // $formField1 = $form1->createFormField("SA", "First Name", true);
+     $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
+     $worker1 = $station1->createWorker("HumanWorker",1,true);
+    
+     $form1 = $station1->createForm("TaskForm","titletest","descriptiontest");
+     $formField1 = $form1->createFormField("SA", "First Name", true);
+     $formField2 = $form1->createFormField("SA", "Middle Name", true);
+    
+    // $line->createRun("title",);
+    //"post", "/lines/" + this.id + "/runs.json", "run[title]="+title+"&data="+data);
+     
      // $formfield2 = new FormField("SA", "First Name");
      // $form1->addFormField($formfield2);
 

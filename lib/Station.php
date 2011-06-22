@@ -31,9 +31,9 @@ public function createWorker($type = "HumanWorker",$number = 1,$reward = true){
 
 /*
 * createForm
-*     @param string $type               : Type of Worker( e.g HumanWorker)
-*     @param number                     : 
-*     @param reward                     :
+*     @param string $type               : Type of Form( e.g HumanWorker)
+*     @param title                     : 
+*     @param description                     :
 *     @return Worker                    :  new Worker Object
 *     Creates a new Worker for the Station Object
 */

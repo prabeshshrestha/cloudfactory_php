@@ -27,7 +27,20 @@ function __construct($title         = "", $description="", $department_id="4dfb2
   $this->id                         = $id; 
 }
 
-
+  /*
+  * createInputHeader
+  *     @param string $name                     : 
+  *     @param boolean required                 : 
+  *     @param string valid_type                : 
+  *     @return InputFormat                      : new InputFormat Object
+  *     Creates a new InputFormat for the Station Object
+  */
+public function createInputFormat($name = "Company", $required = true, $valid_type = "general"){
+  $parameters = "input_format[name]=".$name."&input_format[required]=".$required."&input_format[valid_type]=".$valid_type;
+  $jsonresponse     = $this->request("lines/".$this->id."/input_formats.json","POST",$parameters);
+  $iFormat   = json_decode($jsonresponse);
+  return new InputFormat($iFormat->name,$iFormat->required,$iFormat->valid_type,$iFormat->line_id,$iFormat->_id);
+}
 
 /*
 * createStation

@@ -2,6 +2,7 @@
 require_once("Application.php");
 require_once("Line.php");
 require_once("Station.php");
+require_once("InputFormat.php");
 require_once("Form.php");
 require_once("FormField.php");
 require_once("Worker.php");

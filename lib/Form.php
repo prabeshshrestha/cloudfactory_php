@@ -44,6 +44,19 @@ public function addFormField(FormField $formfield){
   return new FormField($form_field->field_type, $form_field->label, $this->id, $form_field->required, $form_field->_id);
 }
 
+/*
+ * getFormFields
+ *     @return FormField[]                   : List of FormField Object as an array
+ *     Gets the list of all the form_fields
+ *
+public function getFormFields(){
+  $form_fields                          = array();
+  foreach (json_decode($this->request("stations/".$this->getStationId()."/form/form_fields.json","GET")) as $form_field) {
+    array_push($form_field, new FormField($form_field->field_type,$form_field->label,$form_field->$this->id,$form_field->required,$form_field->_id));
+  }
+  return $form_fields;
+}*/
+
 public function getType(){
   return $this->type;
 }
