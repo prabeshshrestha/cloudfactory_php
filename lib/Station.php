@@ -1,6 +1,7 @@
 <?php
 require_once("Application.php");
 require_once("Worker.php");
+require_once("Form.php");
 /**
 * 
 */
@@ -17,6 +18,8 @@ class Station extends Application
     /*
      * createWorker
      *     @param string $type  : Type of Worker( e.g HumanWorker)
+     *     @param integer $number 
+     *     @param boolean $reward 
      *     @return Worker :  new Worker Object
      *     Creates a new Worker for the Station Object
      */
@@ -25,6 +28,22 @@ class Station extends Application
       $jsonresponse                   = $this->request("stations/".$this->id."/workers.json","POST",$parameters);
       $worker                           = json_decode($jsonresponse);
        return new Worker($worker->type,$worker->station_id,$worker->number,$worker->reward,$worker->_id);
+    }
+    
+    /*
+     * createForm
+     *     @param string $type  : Type of Worker( e.g HumanWorker)
+     *     @param number 
+     *     @param reward 
+     *     @return Worker :  new Worker Object
+     *     Creates a new Worker for the Station Object
+     */
+    public function createForm($type = "TaskForm",$title = "",$description = ""){
+      $parameters = "form[_type]=".$type."&form[title]=".$title."&form[description]=".$description;
+      $jsonresponse                   = $this->request("stations/".$this->id."/form.json","POST",$parameters);
+      $form                           = json_decode($jsonresponse);
+      // $this->id is used for now since mongo does not return the station_id as form is an embedded object
+       return new Form($form->_type,$form->title,$form->description,$this->id,$form->_id);  
     }
 
     public function getType(){
