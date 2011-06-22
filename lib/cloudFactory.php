@@ -10,10 +10,10 @@ class CloudFactory extends Application {
 
   /*
    * createLine
-   *     @param string $title  : Title of Line
-   *     @param string $department_name : Department Name of Line (e.g Other)
-   *     @param string $description : Description about the Line
-   *     @return Line :  new Line Object
+   *     @param string $title                : Title of Line
+   *     @param string $department_name      : Department Name of Line (e.g Other)
+   *     @param string $description          : Description about the Line
+   *     @return Line                        :  new Line Object
    *     Creates a new Line with the parameter passed
    */
   public function createLine($title = "", $department_name = "Other", $description = ""){
@@ -25,8 +25,8 @@ class CloudFactory extends Application {
 
   /*
    * addLine
-   *     @param Line $line  : Line object created within the PHP application
-   *     @return Line :  new Line Object
+   *     @param Line $line      : Line object created within the PHP application
+   *     @return Line           :  new Line Object
    *     Adds the line object created to cloudfactory
    */
   public function addLine($line){
@@ -38,7 +38,7 @@ class CloudFactory extends Application {
 
   /*
    * getLines
-   *     @return Line[] : List of Line Object as an array
+   *     @return Line[]           : List of Line Object as an array
    *     Gets the list of all the lines
    */
   public function getLines(){
@@ -50,8 +50,8 @@ class CloudFactory extends Application {
   }
   
   /*
-   * getLines
-   *     @return Line[] : List of Line Object as an array
+   * getPublicLines
+   *     @return Line[]          : List of Line Object as an array
    *     Gets the list of all the lines
    */
   public function getPublicLines(){

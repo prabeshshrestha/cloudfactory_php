@@ -45,7 +45,8 @@
 
      $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
      $worker1 = $station1->createWorker("HumanWorker",1,true);
-     $form1 = $station1->createForm("TaskForm","titletest","descriptiontest")
+     $form1 = $station1->createForm("TaskForm","titletest","descriptiontest");
+     $formField1 = $form1->createFormField("SA", "First Name", true);
      // echo "Worker Type : ".$worker1->getType();
      // $station2 = $line->createStation("Tournament",1,true)
      // $station2 = $line->createStation("Work");

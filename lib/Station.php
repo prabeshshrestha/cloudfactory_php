@@ -4,7 +4,9 @@
 */
 class Station extends Application
 {
+  
   private $type, $line_id, $id;
+  
   function __construct($type, $line_id, $id)
   {
     $this->type    = $type;
