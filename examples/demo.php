@@ -1,8 +1,9 @@
   <?php
     require_once("../lib/cloudFactory.php");
     $cf = new CloudFactory();
-    $departments = $cf->getDepartments();
-    $departments[0]->getLines();
+    // $departments = $cf->getDepartments();
+    $accounts = $cf->getAccounts();
+    echo count($accounts);
     // echo $departments[0]->getName();
     // echo count($departments[0]->getLines());
     /* 
