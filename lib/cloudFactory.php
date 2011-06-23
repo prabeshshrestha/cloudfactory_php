@@ -6,6 +6,7 @@ require_once("InputFormat.php");
 require_once("Form.php");
 require_once("FormField.php");
 require_once("Worker.php");
+require_once("Run.php");
 
 class CloudFactory extends Application {
 
@@ -14,7 +15,7 @@ class CloudFactory extends Application {
    *     @param string $title                : Title of Line
    *     @param string $department_name      : Department Name of Line (e.g Other)
    *     @param string $description          : Description about the Line
-   *     @return Line                        :  new Line Object
+   *     @return Line                        : new Line Object
    *     Creates a new Line with the parameter passed
    */
   public function createLine($title, $department_name = "Other", $description = ""){
@@ -27,7 +28,7 @@ class CloudFactory extends Application {
   /*
    * addLine
    *     @param Line $line                 : Line object created within the PHP application
-   *     @return Line                      :  new Line Object
+   *     @return Line                      : new Line Object
    *     Adds the line object created to cloudfactory
    */
   public function addLine(Line $line){

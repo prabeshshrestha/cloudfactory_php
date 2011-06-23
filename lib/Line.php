@@ -27,14 +27,34 @@ function __construct($title         = "", $description="", $department_id="4dfb2
   $this->id                         = $id; 
 }
 
+/*
+* createRun
+*     @param string $name                     : 
+*     @param boolean required                 : 
+*     @param string valid_type                : 
+*     @return InputFormat                      : new InputFormat Object
+*     Creates a new InputFormat for the Station Object
+*/
+public function createRun($title = "title"){
+  $parameters = "run[title]=".$title."&data[][Company]=dhaubaji";
   /*
-  * createInputHeader
-  *     @param string $name                     : 
-  *     @param boolean required                 : 
-  *     @param string valid_type                : 
-  *     @return InputFormat                      : new InputFormat Object
-  *     Creates a new InputFormat for the Station Object
+  $parameters = data = [{:Company =>"aaple"},{:Company => "sprout"}]
+  data[company] 
+  data[][Company]=dhaubaji
   */
+$jsonresponse     = $this->request("lines/".$this->id."/runs.json","POST",$parameters);
+$run   = json_decode($jsonresponse);
+return new Run($run->title,$run->line_id,$run->_id);
+}
+
+/*
+* createInputHeader
+*     @param string $name                     : 
+*     @param boolean required                 : 
+*     @param string valid_type                : 
+*     @return InputFormat                      : new InputFormat Object
+*     Creates a new InputFormat for the Station Object
+*/
 public function createInputFormat($name = "Company", $required = true, $valid_type = "general"){
   $parameters = "input_format[name]=".$name."&input_format[required]=".$required."&input_format[valid_type]=".$valid_type;
   $jsonresponse     = $this->request("lines/".$this->id."/input_formats.json","POST",$parameters);
@@ -57,39 +77,48 @@ public function createStation($type = "Work", $max_judges = 1, $enabled = true){
   return new Station($station->type,$station->line_id,$station->_id);
 }
 
-// public function deleteLine($line_id){
-  //   $paramaters                  = "id=$line_id;
-  //   $jsonresponse                = $this->request("lines.json","DELETE",$paramaters);
-  //   return "Line Deleted Successfully";
-  // }
+/*
+ * getStations
+ *     @return Station[]                   : List of Station Object as an array
+ *     Gets the list of all the stations
+ */
+public function getStations(){
+  $stations                          = array();
+  foreach (json_decode($this->request("lines/".$this->id."/stations.json","GET")) as $station) {
+        array_push($stations, new Station($station->type,$station->line_id,$station->_id));
+      }
+  return $stations;
+}
 
-  public function getTitle(){
-    return $this->title;
-  }
+//GET /lines/:line_id/stations.json
 
-  public function getDepartmentID(){
-    return $this->department_id;
-  }
+public function getTitle(){
+  return $this->title;
+}
 
-  public function getDescription(){
-    return $this->description;
-  }
+public function getDepartmentID(){
+  return $this->department_id;
+}
 
-  public function getAccountId(){
-    return $this->account_id;
-  }
+public function getDescription(){
+  return $this->description;
+}
 
-  public function getComplete(){
-    return $this->complete;
-  }
+public function getAccountId(){
+  return $this->account_id;
+}
 
-  public function getPublic(){
-    return $this->public;
-  }
+public function getComplete(){
+  return $this->complete;
+}
 
-  public function getId(){
-    return $this->id;
-  }
+public function getPublic(){
+  return $this->public;
+}
+
+public function getId(){
+  return $this->id;
+}
 
 }
 ?>

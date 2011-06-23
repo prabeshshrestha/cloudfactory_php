@@ -27,13 +27,19 @@
     $inputheader1 = $line->createInputFormat("Company",true,"general");
 
      $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
-     $worker1 = $station1->createWorker("HumanWorker",1,true);
-    
-     $form1 = $station1->createForm("TaskForm","titletest","descriptiontest");
-     $formField1 = $form1->createFormField("SA", "First Name", true);
-     $formField2 = $form1->createFormField("SA", "Middle Name", true);
-    
-    // $line->createRun("title",);
+     echo count($line->getStations());
+     // $worker1 = $station1->createWorker("HumanWorker",1,true);
+     //     
+     // $form1 = $station1->createForm("TaskForm","My new Test","descriptiontest");
+     // $formField1 = $form1->createFormField("SA", "First Name", true);
+     // $formField2 = $form1->createFormField("SA", "Middle Name", true);
+     //     
+     // $run1 = $line->createRun("title");
+     // 
+     // $output1 = $run1->getOutput();
+     
+     
+     // echo $run1->getTitle();
     //"post", "/lines/" + this.id + "/runs.json", "run[title]="+title+"&data="+data);
      
      // $formfield2 = new FormField("SA", "First Name");
