@@ -46,6 +46,21 @@ public function createForm($type   = "TaskForm",$title = "",$description = ""){
 }
 
 /*
+ * getWorkers
+ *     @return Worker[]                   : List of Worker Object as an array
+ *     Gets the list of all the Worker
+ 
+public function getWorkers(){
+  $workers                          = array();
+  echo $this->request("stations/".$this->id."/workers.json","GET");
+  foreach (json_decode($this->request("stations/".$this->id."/workers.json","GET")) as $worker) {
+        array_push($workers, new Worker($worker->type,$worker->station_id,$worker->number,$worker->reward,$worker->_id));
+      }
+  return $workers;
+}
+*/
+
+/*
 * getForm
 *     Gets a new form for the Station Object
 */
@@ -66,19 +81,6 @@ public function getLineId(){
 public function getId(){
   return $this->id;
 }
-
-public function setType($type){
-  $this->type                      = $type;
-}
-
-public function setLineId($line_id){
-  $this->line_id                   = $line_id;
-}
-
-public function setId($id){
-  $this->id                        = $id;
-}
-
 
 }
 

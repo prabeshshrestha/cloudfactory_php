@@ -30,13 +30,15 @@
     $inputformat1 = $line->createInputFormat("Company",true,"general");
     // $inputFormats = $line->getInputFormats();
      $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
-     // $worker1 = $station1->createWorker("HumanWorker",1,true);
+     $worker1 = $station1->createWorker("HumanWorker",1,true);
+     $workers = $station1->getWorkers();
+     echo count($workers);
      //     
      $form1 = $station1->createForm("TaskForm","My new Test","descriptiontest");
      $station1form = $station1->getForm();
-     // $formField1 = $form1->createFormField("SA", "First Name", true);
-     // $formField2 = $form1->createFormField("SA", "Middle Name", true);
-     //     
+     $formField1 = $form1->createFormField("SA", "First Name", true);
+     $formField2 = $form1->createFormField("SA", "Middle Name", true);
+     $form1->getFormFields();
      // $run1 = $line->createRun("title");
      // 
      // $output1 = $run1->getOutput();
