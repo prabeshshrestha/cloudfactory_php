@@ -1,5 +1,6 @@
 <?php
 require_once("Application.php");
+require_once("Department.php");
 require_once("Line.php");
 require_once("Station.php");
 require_once("InputFormat.php");
@@ -63,5 +64,17 @@ class CloudFactory extends Application {
     }
     return $lines;
   }
-
+  
+  /*
+   * getDepartments
+   *     @return Department[]                   : List of Department Object as an array
+   *     Gets the list of all the departments
+   */
+  public function getDepartments(){
+    $departments                         = array();
+    foreach (json_decode($this->request("departments.json","GET")) as $department) {
+          array_push($departments, new Department($department->name,$department->_id));
+        }
+    return $departments;
+  }
 }
