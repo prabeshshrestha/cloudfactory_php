@@ -45,6 +45,16 @@ public function createForm($type   = "TaskForm",$title = "",$description = ""){
   return new Form($form->_type,$form->title,$form->description,$this->id,$form->_id);  
 }
 
+/*
+* getForm
+*     Gets a new form for the Station Object
+*/
+public function getForm(){
+  $jsonresponse                    = $this->request("stations/".$this->id."/form.json","GET");
+  $form                            = json_decode($jsonresponse);
+  return new Form($form->_type,$form->title,$form->description,$this->id,$form->_id);  
+}
+
 public function getType(){
   return $this->type;
 }

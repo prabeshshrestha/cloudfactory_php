@@ -28,12 +28,12 @@
     */
     $line = $cf->createLine("Linasdfe111","Other","Test Description1");
     $inputformat1 = $line->createInputFormat("Company",true,"general");
-    $inputFormats = $line->getInputFormats();
-    echo count($inputFormats);
-     // $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
+    // $inputFormats = $line->getInputFormats();
+     $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
      // $worker1 = $station1->createWorker("HumanWorker",1,true);
      //     
-     // $form1 = $station1->createForm("TaskForm","My new Test","descriptiontest");
+     $form1 = $station1->createForm("TaskForm","My new Test","descriptiontest");
+     $station1form = $station1->getForm();
      // $formField1 = $form1->createFormField("SA", "First Name", true);
      // $formField2 = $form1->createFormField("SA", "Middle Name", true);
      //     
