@@ -2,8 +2,7 @@
     require_once("../lib/cloudFactory.php");
     $cf = new CloudFactory();
     // $departments = $cf->getDepartments();
-    $accounts = $cf->getAccounts();
-    echo count($accounts);
+    // $accounts = $cf->getAccounts();
     // echo $departments[0]->getName();
     // echo count($departments[0]->getLines());
     /* 
@@ -27,9 +26,10 @@
       $lines = $cf->getLines();
       $publicLines = $cf->getPublicLines();
     */
-    // $line = $cf->createLine("Linasdfe111","Other","Test Description1");
-    // $inputheader1 = $line->createInputFormat("Company",true,"general");
-
+    $line = $cf->createLine("Linasdfe111","Other","Test Description1");
+    $inputformat1 = $line->createInputFormat("Company",true,"general");
+    $inputFormats = $line->getInputFormats();
+    echo count($inputFormats);
      // $station1 = $line->createStation("Work"); //type => "(Work/Tournament/Improve) *Improve station cannot exist as first station of a line
      // $worker1 = $station1->createWorker("HumanWorker",1,true);
      //     

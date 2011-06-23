@@ -63,6 +63,19 @@ public function createInputFormat($name = "Company", $required = true, $valid_ty
 }
 
 /*
+ * getInputFormats
+ *     @return InputFormat[]                   : List of InputFormat Object as an array
+ *     Gets the list of all the InputFormats
+ */
+public function getInputFormats(){
+  $iFormats                          = array();
+  foreach (json_decode($this->request("lines/".$this->id."/input_formats.json","GET")) as $iFormat) {
+        array_push($iFormats, new InputFormat($iFormat->name,$iFormat->required,$iFormat->valid_type,$iFormat->line_id,$iFormat->_id));
+      }
+  return $iFormats;
+}
+
+/*
 * createStation
 *     @param string $type                       : Type of Station( e.g Work / Tournament  / Improve)
 *     @param integer $max_judges                : Maximum Number of Judges
@@ -89,8 +102,6 @@ public function getStations(){
       }
   return $stations;
 }
-
-//GET /lines/:line_id/stations.json
 
 public function getTitle(){
   return $this->title;
