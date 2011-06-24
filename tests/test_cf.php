@@ -28,22 +28,6 @@ class CloudFactoryTest extends PHPUnit_Framework_TestCase
     $this->assertGreaterThan(0,count($lines));
     $this->assertType('Line',$lines[0]);
   }
-  
-  /**
-   * @test
-   * @group line
-   * @covers CloudFactory::createLine
-   * createLine function should create a new Line Object and append the new line to cf object
-   */
-  public function createline(){
-    $initial_count = count(self::$cf->getLines());
-    $lines   = self::$cf->createLine("Test Line","Other","Test Description");
-    $count_after_addition = count(self::$cf->getLines());
-    $this->assertGreaterThan(0,count($lines));
-    $this->assertType('Line',$lines[0]);
-  }
-  
-  
 }
 ?>
 
