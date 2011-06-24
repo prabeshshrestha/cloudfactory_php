@@ -2,7 +2,7 @@
 //assertContains assertTrue  assertFalse  AssertEquals  AssertNull  AssertRegExp
 // Testing Requires PHPUnit
 require_once 'PHPUnit/Framework.php';
-require_once '../lib/cloudFactory.php';
+require_once '/Users/sts-158imac/Sites/cloudfactory_php/lib/cloudFactory.php';
 
 class CloudFactoryTest extends PHPUnit_Framework_TestCase
 { 

@@ -7,7 +7,7 @@ class Form extends Application
 
   private $type, $station_id,$description, $id, $title;
 
-  function __construct($type                = "TaskForm", $title, $description,$station_id, $id)
+  function __construct($type, $title="", $description = "", $station_id = "", $id = "")
   {
     $this->type                             = $type;
     $this->title                            = $title;
