@@ -29,11 +29,10 @@ function __construct($title             = "", $description="", $department_id="4
 
 /*
 * createRun
-*     @param string $name                     : 
-*     @param boolean required                 : 
-*     @param string valid_type                : 
-*     @return InputFormat                      : new InputFormat Object
-*     Creates a new InputFormat for the Station Object
+*     @param string $title                     : Title of the Run to be created 
+*     @param array $data                       : Array of data to be passed for creating a run
+*     @return Run                              : new Run Object
+*     Creates a new Run for the Line Object
 */
 public function createRun($title        = "title", $data = array()){
   $parameters                           = "run[title]=".$title;

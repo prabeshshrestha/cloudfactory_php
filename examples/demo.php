@@ -43,7 +43,9 @@
      $rundata = array("Company" => "Dhaubaji",  "Location" => "Kathmandu");
      $run1 = $line->createRun("title",$rundata);//"&data[][Company]=dhaubaji";
      // 
-     // $output1 = $run1->getOutput();
+     $output1 = $run1->getOutput();
+     $final_outputs = $output1[0]->getFinalOutputs();
+     echo $final_outputs[0]->id;
      
      
      // echo $run1->getTitle();
