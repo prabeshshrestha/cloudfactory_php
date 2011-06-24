@@ -27,7 +27,7 @@ Change $apikey, $apiurl and $apiversion according to your needs
             $workstation = $transcriptionLine->createStation("Work");
 
               // Assign Form to workstation
-              $transcriptionForm = $workstation->createForm("TaskForm", "Transcription Form", "Transcribe and fill the fields below : ");
+              $transcriptionForm = $workstation->createForm("TaskForm", "Transcription Form", "Fill the fields below : ");
 
                 // Set Form Fields to $transcriptionForm
                 $speakerField = $transcriptionForm->createFormField("SA", "Speaker", true);
