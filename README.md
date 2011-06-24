@@ -44,3 +44,10 @@ Change $apikey, $apiurl and $apiversion according to your needs in lib/Applicati
               $output = $transcriptionRun->getOutput();
               /* Output will return an array of units which will contain the final outputs(which also in an array) */
                 $final_outputs = $output[0]->getFinalOutputs();// echo $final_outputs[0]->id;
+                
+Contributing
+------------
+1. Use it for your application and submit your [issues][1]
+2. OR You can Fork it /create a branch /commit your changes / push to your branch / submit a pull request
+
+[1]: https://github.com/sprout/cloudfactory_php/issues
