@@ -6,7 +6,7 @@ This is a PHP client for the CloudFactory API. It allows JSON call to CloudFacto
 
 ## Example usage:
 
-Change $apikey, $apiurl and $apiversion according to your needs
+Change $apikey, $apiurl and $apiversion according to your needs in lib/Application.php
 
 ### Now your php file can look like :
 
