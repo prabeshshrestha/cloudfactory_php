@@ -18,13 +18,13 @@ class Form extends Application
 
   /*
   * createFormField
-  *     @param string $field_type              : Type of Form Field
-  *     @param string $label                   : Label of Form Field
-  *     @param boolean $required               : 
-  *     @return FormField                      :  new FormField Object
+  *     @param string $field_type           : Short Answer:SA/\Currency /Email/Long Answer: LA/Select Box: SB/Check Box: CB/Radio Button: RB/Rating/Date/URL/Number
+  *     @param string $label                : Label of Form Field
+  *     @param boolean $required            : 
+  *     @return FormField                   :  new FormField Object
   *     Creates a new FormField with the parameter passed
   */
-public function createFormField($field_type = "SA", $label = "First Name", $required = true){
+public function createFormField($field_type, $label, $required = true){
   $paramaters                               = "form_field[label]=".$label."&form_field[field_type]=".$field_type."&form_field[required]=".$required;
   $jsonresponse                             = $this->request("stations/".$this->getStationId()."/form/form_fields.json","POST",$paramaters);
   $form_field                               = json_decode($jsonresponse);

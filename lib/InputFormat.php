@@ -8,13 +8,13 @@ class InputFormat{
 
   /*
   * __construct
-  *     @param string $name                            : Description of Line
-  *     @param boolean $required                        : Account Id of the line
-  *     @param string $valid_type                :
+  *     @param string $name                            :  Name of Input Format
+  *     @param boolean $required                       : Checks for data in each row
+  *     @param string $valid_type                      : general (alphabetic only)  /  number  /  email  /  url
   *     @param integer $station_id                      :
-  *     Constructor for the line Class
+  *     Constructor for the InputFormat Class
   */
-function __construct($name="",$required="",$valid_type="",$station_id= "",$id="")
+function __construct($name, $required, $valid_type = "general", $station_id= "",$id="")
 {
   $this->name                   = $name;
   $this->required                = $required;

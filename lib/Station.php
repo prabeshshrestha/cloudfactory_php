@@ -16,13 +16,13 @@ class Station extends Application
 
   /*
   * createWorker
-  *     @param string $type                  : Type of Worker( e.g HumanWorker)
-  *     @param integer $number               :
-  *     @param boolean $reward               :
+  *     @param string $type                  : Type of Worker( e.g HumanWorker/ RobotWorker)
+  *     @param integer $number               :  Number of Worker
+  *     @param boolean $reward               :  
   *     @return Worker                       :  new Worker Object
   *     Creates a new Worker for the Station Object
   */
-public function createWorker($type = "HumanWorker",$number = 1,$reward = true){
+public function createWorker($type, $number = 1, $reward = true){
   $parameters                      = "worker[type]=".$type."&worker[number]=".$number."&worker[reward]=".$reward;
   $jsonresponse                    = $this->request("stations/".$this->id."/workers.json","POST",$parameters);
   $worker                          = json_decode($jsonresponse);
@@ -31,13 +31,13 @@ public function createWorker($type = "HumanWorker",$number = 1,$reward = true){
 
 /*
 * createForm
-*     @param string $type               : Type of Form( e.g HumanWorker)
-*     @param title                     : 
-*     @param description                     :
+*     @param string $type               : Type of Form( e.g TaskForm)
+*     @param title                      : 
+*     @param description                :
 *     @return Worker                    :  new Worker Object
-*     Creates a new Worker for the Station Object
+*     Creates a new Form for the Station Object
 */
-public function createForm($type   = "TaskForm",$title = "",$description = ""){
+public function createForm($type, $title = "", $description = ""){
   $parameters                      = "form[_type]=".$type."&form[title]=".$title."&form[description]=".$description;
   $jsonresponse                    = $this->request("stations/".$this->id."/form.json","POST",$parameters);
   $form                            = json_decode($jsonresponse);

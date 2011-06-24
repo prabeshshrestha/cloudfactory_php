@@ -74,7 +74,7 @@ public function getInputFormats(){
 
 /*
 * createStation
-*     @param string $type                       : Type of Station( e.g Work / Tournament  / Improve)
+*     @param string $type                       : Type of Station ( e.g Work / Tournament  / Improve)
 *     @param integer $max_judges                : Maximum Number of Judges
 *     @param boolean $enabled                   :  
 *     @return Station                           :  new Station Object
