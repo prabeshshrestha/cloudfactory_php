@@ -29,7 +29,8 @@ function __construct($title = "",$line_id = "",$id="")
 */
 public function getOutput(){
   $outputs                  = array();
-  $jsonresponse          = $this->request("runs/".$this->id."/final_outputs.json","GET");
+  // $jsonresponse          = $this->request("runs/".$this->id."/final_outputs.json","GET");
+  $jsonresponse             = $this->request("runs/"."4e02fa9e7768f91c1200008d"."/final_outputs.json","GET");
   foreach (json_decode($jsonresponse) as $output) {
     array_push($outputs, new Output($output->unit_id,$output->final_outputs));
   }
